@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>    <button class="theme-toggle-btn">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <header class="header">
+        <div class="profile-container">
+            <div class="profile-image-container">
+                <div class="profile-image">
+                    <img src="profile.jpeg" alt="Mi foto de perfil">
+                </div>
+            </div>
+            <h1 class="name">Pau Sintes</h1>
+            <p class="title">Desarrollador de Aplicaciones Multiplataforma</p>
+        </div>
+        <div class="bubbles"></div>
+    </header>
+
+    <script>
+        function createBubbles() {
+            const bubblesContainer = document.querySelector('.bubbles');
+            const bubbleCount = 15;
+            
+            for (let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                
+                // Tamaño aleatorio
+                const size = Math.random() * 100 + 50;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                
+                // Posición inicial aleatoria
+                const startX = Math.random() * 100;
+                const startY = Math.random() * 100;
+                bubble.style.left = `${startX}%`;
+                bubble.style.top = `${startY}%`;
+                
+                // Movimiento aleatorio
+                const tx = (Math.random() - 0.5) * 200;
+                const ty = (Math.random() - 0.5) * 200;
+                bubble.style.setProperty('--tx', `${tx}px`);
+                bubble.style.setProperty('--ty', `${ty}px`);
+                
+                // Retraso aleatorio en la animación
+                bubble.style.animationDelay = `${Math.random() * 8}s`;
+                
+                bubblesContainer.appendChild(bubble);
+            }
+        }
+        
+        createBubbles();
+    </script>
+    <div class="wave-container">
+        <div class="wave"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+    </div>
+    <section class="about" id="about">
+        <h2 class="section-title">Sobre Mí</h2>
+        <div class="content">
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Actualmente soy estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM) en el Institut Tecnològic de Barcelona (ITICBCN), donde estoy ampliando mis conocimientos en desarrollo de software y tecnologías modernas.</p>
+                    <p>Mi trayectoria académica comenzó en el IES Joan Ramis , donde completé el grado medio, sentando las bases de mi formación tecnológica. Como apasionado de la tecnología, he desarrollado varios proyectos innovadores, incluyendo aplicaciones móviles y soluciones de software que demuestran mi compromiso con la excelencia técnica.</p>
+                    <p>Me caracterizo por mi entusiasmo por aprender nuevas tecnologías y mi capacidad para aplicar estos conocimientos en proyectos prácticos. Mi objetivo es seguir creciendo como desarrollador y contribuir al mundo tecnológico con soluciones creativas y eficientes.</p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Estudiante DAM en ITICBCN</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-code"></i>
+                        <span>Desarrollador de Apps</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>Apasionado por la Tecnología</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="section-title">Competencias Digitales</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <i class="fab fa-java"></i>
+                <h3>Java</h3>
+                <div class="skill-level">
+                    <div class="progress" data-level="85%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-android"></i>
+                <h3>Android Studio</h3>
+                <div class="skill-level">
+                    <div class="progress" data-level="80%"></div>
+                </div>
+            </div>            <div class="skill-card">
+                <div class="kotlin-logo">
+                    <svg viewBox="0 0 24 24" class="kotlin-icon">
+                        <path d="M0,24 L12,12 L24,24 M0,0 L12,0 L0,12 M12,0 L24,0 L12,12"/>
+                    </svg>
+                </div>
+                <h3>Kotlin</h3>
+                <div class="skill-level">
+                    <div class="progress" data-level="75%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-git-alt"></i>
+                <h3>Git</h3>
+                <div class="skill-level">
+                    <div class="progress" data-level="90%"></div>
+                </div>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-database"></i>
+                <h3>Bases de Datos</h3>
+                <div class="skill-level">
+                    <div class="progress" data-level="85%"></div>
+                </div>
+            </div>
+        </div>
+    </section>    <section class="projects" id="projects">
+        <h2 class="section-title">Mis Proyectos</h2>        <div class="projects-container">            <a href="https://github.com/TuUsuario/bicing" class="project-card" target="_blank">
+                <div class="project-icon">
+                    <i class="fas fa-bicycle"></i>
+                </div>
+                <h3>Bicing <i class="fas fa-external-link-alt"></i></h3>
+                <p>Aplicación móvil que permite a los usuarios valorar y revisar el estado de bicicletas públicas antes de su uso, mejorando la experiencia del servicio de bicicletas compartidas.</p>
+                <div class="project-tech">
+                    <span>Android</span>
+                    <span>Kotlin</span>
+                    <span>Firebase</span>
+                </div>
+            </a>
+            <a href="https://github.com/PauSintesP/njoy" class="project-card" target="_blank">
+                <div class="project-icon">
+                    <i class="fas fa-ticket-alt"></i>
+                </div>
+                <h3>nJoy <i class="fas fa-external-link-alt"></i></h3>
+                <p>Plataforma de compra-venta de entradas con sistema de validación QR. Incluye roles de administrador para escanear entradas y funcionalidad para usuarios que permite mostrar y activar entradas mediante códigos QR.</p>
+                <div class="project-tech">
+                    <span>Android</span>
+                    <span>Kotlin</span>
+                    <span>QR</span>
+                </div>
+            </a>
+            <a href="https://github.com/PauSintesP/SwipeTrash" class="project-card" target="_blank">
+                <div class="project-icon">
+                    <i class="fas fa-images"></i>
+                </div>
+                <h3>Swipe Trash <i class="fas fa-external-link-alt"></i></h3>
+                <p>Aplicación de gestión de fotos intuitiva que permite a los usuarios limpiar su galería de forma eficiente mediante gestos de deslizamiento. Desliza a la derecha para conservar o a la izquierda para eliminar fotos, simplificando la organización de tu galería.</p>
+                <div class="project-tech">
+                    <span>Android</span>
+                    <span>Kotlin</span>
+                    <span>Gestures</span>
+                    <span>MediaStore</span>
+                </div>
+            </a>
+        </div>
+        <div class="github-projects">
+            <a href="https://github.com/PauSintesP" class="github-link" target="_blank">
+                <i class="fab fa-github"></i>
+                <span>Ver más proyectos en GitHub</span>
+            </a>
+        </div>
+    </section>    <section class="contact" id="contact">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-container">
+            <div class="contact-card">
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>¿Tienes alguna idea o proyecto en mente?</p>
+                    <a href="mailto:pausintespaul@gmail.com" class="contact-button">
+                        <span>Enviar email</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-info">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p>Conéctate profesionalmente</p>
+                    <a href="https://www.linkedin.com/in/pau-sintes-0a5ab7275/" class="contact-button linkedin">
+                        <span>Conectar</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-info">
+                    <i class="fas fa-phone"></i>
+                    <h3>Teléfono</h3>
+                    <p>¿Prefieres una llamada?</p>
+                    <a href="tel:+34698420289" class="contact-button">
+                        <span>Llamar</span>
+                        <i class="fas fa-phone-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-info">
+                    <i class="fab fa-instagram"></i>
+                    <h3>Instagram</h3>
+                    <p>Sígueme en Instagram</p>
+                    <a href="https://www.instagram.com/pausintes_9/?__d=11" class="contact-button instagram">
+                        <span>Seguir</span>
+                        <i class="fas fa-user-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Pau Sintes - Desarrollador de Aplicaciones Multiplataforma</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
