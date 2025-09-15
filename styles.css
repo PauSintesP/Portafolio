@@ -1,17 +1,21 @@
 :root {
     --primary-color: #2196f3;
+    --primary-dark: #1565C0;
     --background-color: #ffffff;
     --text-color: #333333;
-    --card-background: #f5f5f5;
-    --shadow-color: rgba(0, 0, 0, 0.1);
+    --card-background: #f8f9fa;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --border-color: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] {
     --primary-color: #64b5f6;
+    --primary-dark: #1976D2;
     --background-color: #121212;
     --text-color: #ffffff;
     --card-background: #1e1e1e;
-    --shadow-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -466,21 +470,26 @@ section.visible {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
+    padding: 1.5rem;
 }
 
 .contact-info i {
-    font-size: 2.5rem;
-    color: var(--primary-color);
+    font-size: 1.8rem;
+    color: #fff;
     transition: all 0.3s ease;
-    background: var(--card-bg);
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px var(--shadow-color);
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    box-shadow: 0 4px 15px var(--shadow-color);
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contact-card:hover .contact-info i {
@@ -488,46 +497,61 @@ section.visible {
 }
 
 .contact-info h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--text-color);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
 .contact-info p {
     color: var(--text-color);
-    opacity: 0.8;
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    max-width: 200px;
 }
 
 .contact-button {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 1rem 2rem;
-    background: var(--primary-color);
-    color: white;
+    padding: 0.8rem 1.5rem;
+    background: var(--background-color);
+    color: var(--primary-color);
     text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
+    border-radius: 12px;
+    font-weight: 500;
     transition: all 0.3s ease;
-    width: 80%;
+    width: auto;
+    min-width: 120px;
     justify-content: center;
     margin: 0 auto;
+    font-size: 0.9rem;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 2px 8px var(--shadow-color);
 }
 
 .contact-button:hover {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    border-color: transparent;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+    box-shadow: 0 4px 12px var(--shadow-color);
 }
 
 .contact-button i {
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 .contact-button:hover i {
-    transform: translateX(5px);
+    transform: translateX(3px);
+    color: white;
+}
+
+.contact-card:hover .contact-info i {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px var(--shadow-color);
 }
 
 .contact-button.linkedin:hover {
@@ -564,17 +588,19 @@ section.visible {
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 2rem;
 }
 
 .contact-card {
     background: var(--card-background);
-    border-radius: 20px;
-    padding: 2rem;
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
     text-align: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 5px 15px var(--shadow-color);
+    box-shadow: 0 8px 30px var(--shadow-color);
     position: relative;
     overflow: hidden;
+    border: 1px solid var(--border-color);
 }
 
 .contact-card::before {
