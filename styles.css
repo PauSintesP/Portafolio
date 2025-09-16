@@ -470,26 +470,45 @@ section.visible {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    padding: 1.5rem;
+    gap: 1.25rem;
+    padding: 2rem;
 }
 
 .contact-info i {
     font-size: 1.8rem;
     color: #fff;
-    transition: all 0.3s ease;
-    width: 60px;
-    height: 60px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    width: 64px;
+    height: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 16px;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    box-shadow: 0 4px 15px var(--shadow-color);
-    margin-bottom: 1rem;
+    border-radius: 20px;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid transparent;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+.contact-info .fa-envelope {
+    background-image: linear-gradient(135deg, #D93025, #EA4335);
+    box-shadow: 0 4px 15px rgba(217, 48, 37, 0.2);
+}
+
+.contact-info .fa-linkedin {
+    background-image: linear-gradient(135deg, #0077b5, #00a0dc);
+    box-shadow: 0 4px 15px rgba(0, 119, 181, 0.2);
+}
+
+.contact-info .fa-phone {
+    background-image: linear-gradient(135deg, #00C853, #69F0AE);
+    box-shadow: 0 4px 15px rgba(0, 200, 83, 0.2);
+}
+
+.contact-info .fa-instagram {
+    background-image: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    box-shadow: 0 4px 15px rgba(225, 48, 108, 0.2);
 }
 
 .contact-card:hover .contact-info i {
@@ -497,56 +516,102 @@ section.visible {
 }
 
 .contact-info h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--text-color);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .contact-info p {
     color: var(--text-color);
-    opacity: 0.7;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-    max-width: 200px;
+    opacity: 0.8;
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+    max-width: 220px;
+    line-height: 1.5;
 }
 
 .contact-button {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 1.5rem;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
     background: var(--background-color);
-    color: var(--primary-color);
+    color: var(--text-color);
     text-decoration: none;
-    border-radius: 12px;
+    border-radius: 16px;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     width: auto;
-    min-width: 120px;
+    min-width: 160px;
     justify-content: center;
     margin: 0 auto;
-    font-size: 0.9rem;
-    border: 1px solid var(--primary-color);
-    box-shadow: 0 2px 8px var(--shadow-color);
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.contact-button span,
+.contact-button i {
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s ease;
 }
 
 .contact-button:hover {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-    color: white;
-    border-color: transparent;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px var(--shadow-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 6px 20px rgba(33, 150, 243, 0.25);
+}
+
+.contact-button:hover::before {
+    opacity: 1;
+}
+
+.contact-button:hover span,
+.contact-button:hover i {
+    color: white;
 }
 
 .contact-button i {
-    font-size: 1rem;
-    transition: all 0.3s ease;
+    font-size: 1.1rem;
 }
 
 .contact-button:hover i {
-    transform: translateX(3px);
-    color: white;
+    transform: translateX(4px);
+}
+
+/* Estilos específicos para cada botón social */
+.contact-button.linkedin::before {
+    background: linear-gradient(135deg, #0077b5, #00a0dc);
+}
+
+.contact-button.instagram::before {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.contact-button.email::before {
+    background: linear-gradient(135deg, #D93025, #EA4335);
+}
+
+.contact-button.phone::before {
+    background: linear-gradient(135deg, #00C853, #69F0AE);
 }
 
 .contact-card:hover .contact-info i {
