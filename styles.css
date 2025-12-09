@@ -424,6 +424,19 @@ section.visible {
     }
 }
 
+/* TypeScript Icon */
+.typescript-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    fill: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover .typescript-icon {
+    transform: scale(1.1);
+}
+
 /* Contact */
 .contact-container {
     display: grid;
