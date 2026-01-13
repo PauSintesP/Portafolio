@@ -21,16 +21,24 @@ window.addEventListener('mousemove',
     }
 );
 
-// Icons Configuration
+// Icons Configuration - All Technologies
 const icons = [
-    { code: '\uf17b', font: '900 20px "Font Awesome 6 Brands"', color: '#3DDC84' }, // Android
-    { code: '\uf3b9', font: '900 20px "Font Awesome 6 Brands"', color: '#F7DF1E' }, // JS
-    { code: '\uf4e4', font: '900 20px "Font Awesome 6 Brands"', color: '#f89820' }, // Java
-    { code: '\uf41b', font: '900 20px "Font Awesome 6 Brands"', color: '#61DAFB' }, // React
-    { code: '\uf1d3', font: '900 20px "Font Awesome 6 Brands"', color: '#F05032' }, // Git
-    { code: '\uf1c0', font: '900 18px "Font Awesome 6 Free"', color: 'rgba(248, 250, 252, 0.3)' },   // Database
-    { code: '\uf121', font: '900 18px "Font Awesome 6 Free"', color: 'rgba(6, 182, 212, 0.3)' },     // Code
-    { code: '\uf120', font: '900 18px "Font Awesome 6 Free"', color: 'rgba(139, 92, 246, 0.3)' }      // Terminal
+    // Main Technologies
+    { code: '\uf4e4', font: '900 22px "Font Awesome 6 Brands"', color: '#f89820' },      // Java
+    { code: '\uf3e2', font: '900 22px "Font Awesome 6 Brands"', color: '#3776AB' },      // Python
+    { code: '\uf5dc', font: '900 20px "Font Awesome 6 Free"', color: '#FF6F00' },        // Brain (IA)
+    { code: '\uf17b', font: '900 22px "Font Awesome 6 Brands"', color: '#3DDC84' },      // Android
+    { code: '\uf121', font: '900 20px "Font Awesome 6 Free"', color: '#7F52FF' },        // Code (Kotlin)
+    { code: '\uf233', font: '900 20px "Font Awesome 6 Free"', color: '#6DB33F' },        // Server (Spring Boot)
+    { code: '\uf3b9', font: '900 22px "Font Awesome 6 Brands"', color: '#F7DF1E' },      // JavaScript
+    { code: '\uf41b', font: '900 22px "Font Awesome 6 Brands"', color: '#61DAFB' },      // React
+    { code: '\uf1c0', font: '900 20px "Font Awesome 6 Free"', color: '#4DB33D' },        // Database (SQL)
+    { code: '\uf1d3', font: '900 22px "Font Awesome 6 Brands"', color: '#F05032' },      // Git
+    { code: '\uf395', font: '900 22px "Font Awesome 6 Brands"', color: '#2496ED' },      // Docker
+    // Additional subtle icons for variety
+    { code: '\uf120', font: '900 18px "Font Awesome 6 Free"', color: 'rgba(139, 92, 246, 0.3)' },  // Terminal
+    { code: '\uf0ad', font: '900 18px "Font Awesome 6 Free"', color: 'rgba(248, 250, 252, 0.25)' }, // Wrench
+    { code: '\uf013', font: '900 18px "Font Awesome 6 Free"', color: 'rgba(6, 182, 212, 0.25)' }    // Cog
 ];
 
 // Create Icon Particle
